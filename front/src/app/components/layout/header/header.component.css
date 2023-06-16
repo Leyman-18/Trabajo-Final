@@ -1,0 +1,19 @@
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.logo img{
+  width: 100px;
+  height: 100px;
+}
+
+.title{
+  font-family: 'Righteous';
+  flex-grow: 3;
+  color: #8B0000;
+}
+

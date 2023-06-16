@@ -1,0 +1,46 @@
+<!-- <p>crear-viajeros works!</p> -->
+<div>
+    <p-toast></p-toast>
+  </div>
+  
+  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+  
+    <div class="grid">
+      <div class="col-12 sm:col-6">
+        <div class="p-inputgroup mb-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText formControlName="numeroPlazas" placeholder="numeroPlazas" title="numeroPlazas">
+        </div>
+      </div>
+  
+      <div class="col-12 sm:col-6">
+        <div class="p-inputgroup mb-1">
+          <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
+          <input type="text" pInputText formControlName="frv" placeholder="frv" title="frv">
+        </div>
+      </div>
+    </div>
+  
+    <div>
+        <label for="idViajero">Viajeros:</label>
+        <select id="idViajero" formControlName="idViajero">
+          <option value="">Seleccione una Viajeros</option>
+          <option *ngFor="let viajero of viajeros" [value]="viajero.id">{{ viajero.nombreCliente }}</option>
+        </select>
+        <div *ngIf="form.controls['idViajero'].invalid && form.controls['idViajero'].touched">
+          Debe seleccionar una Viajeros.
+        </div>
+      </div>
+
+  
+    <div class="text-right">
+      <div class="col-12 sm:col-6">
+        <button pButton pRipple type="submit" id="enviar" icon="pi pi-check" label="Enviar" [disabled]="!form.valid" class="mt-4 mr-2"></button>
+  
+        <button pButton pRipple  type="button"  icon="pi pi-times" label="Cancelar"
+        class=" mr-2" (click)="cancel()">
+        </button>
+      </div>
+    </div>
+  </form>
+  

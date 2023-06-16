@@ -1,0 +1,36 @@
+<!-- <p>mostrar-referencia works!</p> -->
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a pButton pRipple label="Agregar Referencia" icon="pi pi-inbox" class="bg-cyan-600" [routerLink]="['/addventas']"></a>
+  </div>
+  
+  <div>
+    <p-toast></p-toast>
+  </div>
+  
+  <p-table [value]="referencia">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-referencia>
+      <tr>
+        <td>{{referencia.id}}</td>
+        <td>{{referencia.nombreCliente}}</td>
+        <td>{{referencia.direccionCliente}}</td>
+        <td>{{referencia.telefonoCliente}}</td>
+        <td>
+          <!-- <p-button icon="pi pi-plus" class="bg-cyan-600 mr-1" (click)="imprimir(ventas.id)"></p-button> -->
+          <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['/ventas/edit/', referencia.id]">
+          </a>
+          <!-- <button type="button" pButton pRipple icon="pi pi-times" class="bg-cyan-600 mr-1" (click)="eliminarViajero(referencia.id)">
+          </button> -->
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  

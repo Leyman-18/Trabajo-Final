@@ -1,0 +1,9 @@
+<!-- <p>ejercicio1vista works!</p> -->
+<h1>vista de Productos</h1>
+<section class="product-grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image"> <!-- property biding-->
+    <h2>{{product.price}}</h2> <!-- string interpolation-->
+    <p>{{product.name}}</p>
+  </div>
+</section>

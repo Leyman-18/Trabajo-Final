@@ -1,0 +1,38 @@
+<!-- <p>ejemplo6 works!</p> -->
+<h2>Ejemplo 6</h2>
+
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a
+        pButton
+        pRipple
+        label="Crear Usuario"
+        icon="pi pi-user-plus"
+        class="bg-cyan-600"
+        [routerLink]="['/ejemploAgregarUser']"
+    >
+    </a>
+</div>
+
+<p-table [value]="listUser">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de nacimiento</th>
+            <th>Cargo</th>
+            <th>Salario</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-listUser>
+        <tr>
+            <td>{{ listUser.nombre }}</td>
+            <td>{{ listUser.fechaN }}</td>
+            <td>{{ listUser.cargo }}</td>
+            <td>{{ listUser.salario }}</td>
+            <td>
+        <!-- <p-button icon="pi pi-check" class="mr-1"></p-button> -->
+                <p-button icon="pi pi-sync" class="mx-1"></p-button>
+                <p-button icon="pi pi-eraser" class="mx-1"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
